@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load markup_tags %}
+
+
+{% block body %}
+  {% if request.user.is_staff %}
+    {% for post in posts %}
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <b>{{post.user}}</b><br />
+          --------------------<br />
+          {{post.text|apply_markup:"markdown"}}
+          <br />
+          <br />
+          <br />
+          <small>{{post.date}}</small>
+        </div>
+      </div>
+      <hr />
+    {% endfor %}
+
+  {% else %}
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p dir='rtl'>
+        لیانا یک استارت آپ شخصی برای اشتراک گذاری جملات و نظرات است اما هنوز تصمیمی برای استفاده عمومی از آن گرفته نشده است <br />
+        برای رجیستر شدن به <a href="/register/"> این </a>آدرس مراجعه کنید
+      </p>
+    </div>
+  </div>
+
+  {% endif %}
+{% endblock body %}

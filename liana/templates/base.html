@@ -1,0 +1,65 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        {% block title %}
+            Liana
+        {% endblock title %}
+    </title>
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
+<style type="text/css">
+    @font-face {
+        font-family: vazir;
+        src: {% static "fonts/vazir/vazir.woff" %};
+    }
+
+    body {
+        font-family: vazir;
+    }
+</style>
+
+<script src="{% static 'js/jquery.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/bootstrap.min.js' %}" type="text/javascript"></script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse" style="background: #333;">
+    <div class="navbar-header pull-right">
+        <a class="navbar-brand" href="/" style="color:cyan;">لیانا</a>
+    </div>
+    <ul class="nav navbar-nav pull-right">
+        {% if request.user.is_authenticated %}
+            <li><a href="/post/create/" style="color: yellow;">ساخت پست جدید</a></li>
+        {% endif %}
+    </ul>
+
+
+
+    {% if request.user.is_superuser %}
+        <a class="btn btn-success pull-left" style="margin-top: 7px; margin-left: 10px;" href="/admin">{% trans "dashboard" %}</a>
+    {% else %}
+        <a class="btn btn-success pull-left" style="margin-top: 7px; margin-left: 10px;" href="/admin">
+        <i class="fa fa-sign-in"></i>
+        {% trans "login" %}</a>
+    {% endif %}
+
+
+    {% if user.is_authenticated %}
+        <a class="btn btn-warning pull-left" style="margin-top: 7px; margin-left: 10px;" href="/admin/logout">{% trans "log out" %}</a>
+    {% endif %}
+
+</nav>
+
+
+<div class="container">
+{% block body %}
+
+{% endblock body %}
+</div>
+
+</body>
+</html>
