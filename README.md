@@ -21,7 +21,7 @@ TIME_ZONE = 'Asia'
 clients:
 [Telegram-bot](http://telegram.me/lianair_bot)
 
-for future:
-[ ] multiuser
-[ ] mobile application
-[x] telegram bot client
+> for future:
+- [ ] multiuser
+- [ ] mobile application
+- [x] telegram bot client
