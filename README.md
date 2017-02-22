@@ -17,11 +17,15 @@ LANGUAGE_CODE = 'fa'
 
 TIME_ZONE = 'Asia'
 ```
-
-clients:
-[Telegram-bot](http://telegram.me/lianair_bot)
+**for usr:**
+```bash
+pip install -r requirments.txt
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser
+```
 
 for future:
 [ ] multiuser
 [ ] mobile application
-[x] telegram bot client
+[ ] telegram bot client

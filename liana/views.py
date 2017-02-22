@@ -49,9 +49,6 @@ def register(request):
 
 def create_post(request):
     now = datetime.now()
-    print "------------------"
-    print request.user.is_staff
-    print "------------------"
     if not request.user.is_staff:
         raise Http404
     form = PostForm(request.POST or None, request.FILES,)
