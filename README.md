@@ -25,7 +25,14 @@ python manage.py migrate
 python manage.py createsuperuser
 ```
 
+<<<<<<< HEAD
 for future:
 [ ] multiuser
 [ ] mobile application
 [ ] telegram bot client
+=======
+> for future:
+- [ ] multiuser
+- [ ] mobile application
+- [x] telegram bot client
+>>>>>>> 1405a48fa113b9fa5e1c1310572f09238e9f8f1f
