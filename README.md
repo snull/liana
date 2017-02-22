@@ -26,7 +26,7 @@ python manage.py createsuperuser
 ```
 
 
-for future:
-[ ] multiuser
-[ ] mobile application
-[ ] telegram bot client
+> for future:
+- [ ] multiuser
+- [ ] mobile application
+- [ ] telegram bot client
